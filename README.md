@@ -48,24 +48,28 @@ Where:
 
 To incorporate the order of tokens, **positional encodings** are added to the embeddings. This is necessary because the attention mechanism doesn’t inherently account for the order of words in a sequence.
 
-The **positional encoding** for a position $\( pos \)$ and dimension $\( i \)$ is defined as:
-$$
+The **positional encoding** for a position \( pos \) and dimension \( i \) is defined as:
+
+```math
 \[
 \text{PE}(pos, 2i) = \sin\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)
 \]
 \[
 \text{PE}(pos, 2i+1) = \cos\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)
 \]
-$$
+```
+
 Where:
-- $\( pos \)$ is the position of the token in the sequence.
-- $\( i \)$ refers to the dimension within the embedding vector.
+- \( pos \) is the position of the token in the sequence.
+- \( i \) refers to the dimension within the embedding vector.
 
 These positional encodings are added to the original token embeddings:
 
+```math
 \[
 \text{Embedding}(x_i) = E[x_i] + \text{PE}(pos)
 \]
+```
 
 This gives the model information about both the content of the token and its position in the sequence.
 
