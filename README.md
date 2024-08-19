@@ -32,17 +32,17 @@ Let’s break down the embedding process mathematically.
 ## Embedding Formula
 
 Let:
-- \( V \) be the size of the vocabulary (total number of unique tokens).
-- \( d_{\text{model}} \) be the dimension of the embedding space.
+- $( V )$ be the size of the vocabulary (total number of unique tokens).
+- $( d_{\text{model}} )$ be the dimension of the embedding space.
 
-For each token \( x_i \), the embedding layer learns a matrix \( E \in \mathbb{R}^{V \times d_{\text{model}}} \) such that the embedding for token \( x_i \) is:
+For each token $( x_i )$, the embedding layer learns a matrix $( E \in \mathbb{R}^{V \times d_{\text{model}}} )$ such that the embedding for token $( x_i )$ is:
 
-\[
+```math
 \mathbf{e}(x_i) = E[x_i]
-\]
+```
 
 Where:
-- \( E[x_i] \) is the \( i \)-th row of the embedding matrix, which corresponds to the token’s vector representation.
+- $( E[x_i] )$ is the $( i )$-th row of the embedding matrix, which corresponds to the token’s vector representation.
 
 ## Positional Encoding
 
